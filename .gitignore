@@ -26,6 +26,7 @@ npm-debug.log*
 # Local agent / tooling state
 .omo/
 .planning/**/.cache/
+.playwright-mcp/
 
 # Supabase local dev
 supabase/.branches/

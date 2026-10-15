@@ -8,7 +8,7 @@
 | Day | Fri |
 | Session # | 01 |
 | Topic | Business Model Canvas |
-| Facilitator | _to confirm_ |
+| Facilitator | Faizan Lagari |
 
 ## Learning objectives
 
@@ -21,7 +21,7 @@
 
 ## Resources
 
-- 
+- [`worksheet.md`](worksheet.md) — Vision-to-Goals Canvas (session handout)
 
 ## Action items
 

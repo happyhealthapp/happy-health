@@ -19,6 +19,8 @@ export type Session = {
   mentor: string;
   /** Assignment folder under assignments/ in the repo, if one exists. */
   folder?: string;
+  /** Fillable/printable worksheet PDF served from public/, if one exists. */
+  worksheet?: string;
   status: SessionStatus;
 };
 
@@ -34,6 +36,7 @@ export const VISION =
 export const REPO_URL = "https://github.com/happyhealthapp/happy-health";
 export const ASSIGNMENTS_URL = `${REPO_URL}/tree/main/assignments`;
 export const PITCH_URL = `${import.meta.env.BASE_URL}assignments/happy-health-pitch.pdf`;
+export const WORKSHEET_URL = `${import.meta.env.BASE_URL}assignments/2026-09-25-business-model-canvas/worksheet.pdf`;
 
 /** Confirmed sessions (any order — rendered sorted by date). */
 export const sessions: Session[] = [
@@ -43,6 +46,15 @@ export const sessions: Session[] = [
     topic: "Accounts & Finance",
     mentor: "Dr. Mohsin Ali",
     folder: "2026-09-28-accounts-and-finance",
+    status: "done",
+  },
+  {
+    n: 2,
+    date: "2026-09-25",
+    topic: "Business Model Canvas",
+    mentor: "Faizan Lagari",
+    folder: "2026-09-25-business-model-canvas",
+    worksheet: WORKSHEET_URL,
     status: "done",
   },
 ];

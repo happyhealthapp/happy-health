@@ -49,7 +49,30 @@ function AssignmentRow({ session }: { session: Session }) {
       </td>
       <td className="assignment-cell">
         <span className="assignment-topic">{session.topic}</span>
-        {url ? (
+        {session.worksheet ? (
+          <span className="pitch-actions">
+            <a
+              className="assignment-link"
+              href={session.worksheet}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View
+            </a>
+            <a className="assignment-link" href={session.worksheet} download>
+              Download
+            </a>
+            <a
+              className="assignment-link"
+              href={session.worksheet}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Opens the PDF — use the print button or Ctrl/Cmd+P to print"
+            >
+              Print
+            </a>
+          </span>
+        ) : url ? (
           <a className="assignment-link" href={url}>
             Open assignment <Icon />
           </a>

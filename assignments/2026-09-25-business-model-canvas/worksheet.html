@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vision-to-Goals Canvas · HappyHealth</title>
+<style>
+  /* ---------- Page box (print-paged-media: declare the page first) ---------- */
+  @page { size: A4; margin: 13mm 14mm 11mm; }
+
+  /* ---------- Design tokens ---------- */
+  :root {
+    --ink:      #101418;
+    --muted:    #5b6672;
+    --faint:    #8a939c;
+    --accent:   #0f7b6c;
+    --wash:     #eef4f2;
+    --paper:    #ffffff;
+    --rule:     1.4px solid var(--ink);
+    --hair:     1px solid #97a0a8;
+    --s1: 4px; --s2: 7px; --s3: 10px; --s4: 14px; --s5: 20px;
+    --r: 3px;
+    --font: "DejaVu Sans", "Liberation Sans", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font);
+    color: var(--ink);
+    font-size: 10pt;
+    line-height: 1.28;
+    background: var(--paper);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    border-bottom: 2.5px solid var(--accent);
+    padding-bottom: var(--s2); margin-bottom: var(--s3);
+    break-inside: avoid; break-after: avoid;
+  }
+  .kicker {
+    font-size: 8.5pt; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700;
+  }
+  .wordmark { font-size: 18pt; font-weight: 800; color: var(--accent); letter-spacing: -.01em; line-height: 1; }
+  h1 { font-size: 18.5pt; margin: 2px 0 var(--s2); letter-spacing: -.012em; break-after: avoid; }
+  .meta { display: flex; gap: 30px; font-size: 10.5pt; }
+  .meta .k { color: var(--muted); }
+  .meta .v { font-weight: 600; }
+  .hint { font-style: italic; color: var(--muted); margin: var(--s1) 0 var(--s3); }
+
+  /* ---------- Sections ---------- */
+  section { margin: 0 0 9px; break-inside: avoid; }
+  h2 { font-size: 12pt; margin: 0 0 var(--s2); break-after: avoid; }
+  h2 .n { color: var(--accent); }
+  h2 .sub { font-weight: 400; color: var(--muted); font-size: 10pt; }
+
+  /* ---------- 1. Vision box ---------- */
+  .box {
+    border: var(--rule); border-radius: var(--r);
+    padding: 8px var(--s4); min-height: 46px;
+  }
+  .box .lbl { font-size: 8.5pt; color: var(--faint); text-transform: uppercase; letter-spacing: .09em; }
+  .vision-text { font-size: 12pt; margin-top: var(--s1); }
+  .vision-sub { color: var(--muted); margin-top: 1px; }
+
+  /* ---------- 2. Three-column stage boxes ---------- */
+  .cols3 { display: flex; border: var(--rule); border-radius: var(--r); overflow: hidden; }
+  .cols3 .col { flex: 1; padding: var(--s3) var(--s3); }
+  .cols3 .col + .col { border-left: var(--rule); }
+  .cols3 h3 { font-size: 10.5pt; margin: 0 0 var(--s2); }
+  .check { display: flex; gap: var(--s2); align-items: flex-start; }
+  .sq {
+    width: 13px; height: 13px; border: 1.4px solid var(--ink); border-radius: 2px;
+    flex: none; margin-top: 1px; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 10px; line-height: 1;
+  }
+  .sq.on { background: var(--ink); color: #fff; }
+  .evidence { margin: var(--s2) 0 0; }
+  .line { display: inline-block; border-bottom: var(--hair); min-width: 60%; }
+
+  /* ---------- Tables ---------- */
+  table { width: 100%; border-collapse: collapse; break-inside: avoid; }
+  th, td { border: var(--rule); padding: 5px 8px; vertical-align: top; text-align: left; }
+  th { background: var(--wash); font-size: 9.5pt; }
+  td.num, th.num { width: 36px; text-align: center; }
+  .score td { text-align: center; vertical-align: middle; }
+  .score .desc { text-align: left; font-size: 9pt; }
+  .goals td { height: 25px; }
+  .muted { color: var(--muted); }
+
+  /* ---------- Footer ---------- */
+  .foot {
+    margin-top: var(--s2); padding-top: var(--s2);
+    border-top: var(--hair);
+    font-size: 8.5pt; color: var(--faint); text-align: center;
+  }
+</style>
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="kicker">Worksheet A · Six-Month Planning</div>
+    <div class="wordmark">HappyHealth</div>
+  </header>
+
+  <h1>Vision-to-Goals Canvas</h1>
+  <div class="meta">
+    <span><span class="k">Startup:</span> <span class="v">HappyHealth</span></span>
+    <span><span class="k">Team:</span> <span class="v">Theo</span></span>
+  </div>
+  <p class="hint">Work top to bottom. Name your riskiest assumptions before you write any goals.</p>
+
+  <section>
+    <h2><span class="n">1.</span> Vision in one line <span class="sub">(5–10 years)</span></h2>
+    <div class="box">
+      <div class="lbl">Our vision</div>
+      <div class="vision-text">Patients will receive qualified &amp; reasonable health care</div>
+      <div class="vision-sub">assistant at their residence</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2.</span> Our stage today <span class="sub">(tick one)</span></h2>
+    <div class="cols3">
+      <div class="col">
+        <h3>Problem-solution fit</h3>
+        <div class="check"><span class="sq on">✕</span><span>Do they have the problem?</span></div>
+      </div>
+      <div class="col">
+        <h3>Product-market fit</h3>
+        <div class="check"><span class="sq"></span><span>Will they pay and stay?</span></div>
+      </div>
+      <div class="col">
+        <h3>Early scale</h3>
+        <div class="check"><span class="sq"></span><span>Can we grow it profitably?</span></div>
+      </div>
+    </div>
+    <p class="evidence"><strong>Evidence</strong> (users, revenue, pilots, team size): <span class="line">&nbsp;</span></p>
+  </section>
+
+  <section>
+    <h2><span class="n">3.</span> Riskiest assumptions — <span class="sub">if this belief is wrong, the startup dies</span></h2>
+    <p class="hint" style="margin:0 0 6px;">Finish the sentence “Our startup only works if…” — think about customers, payment, usage and reach.</p>
+    <table>
+      <thead>
+        <tr>
+          <th class="num">#</th>
+          <th>Assumption</th>
+          <th style="width:30%;">How sure are we? <span class="muted">(1 = guess, 5 = proven)</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td>My startup only works if clients / patients will pay on time</td><td></td></tr>
+        <tr><td class="num">2</td><td>Caregiver / our doctor might not reach on time</td><td></td></tr>
+        <tr><td class="num">3</td><td>Medical equipment damage</td><td></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="n">▸</span> Scoring key — <span class="sub">how sure are we?</span></h2>
+    <table class="score">
+      <thead>
+        <tr><th class="num">1</th><th class="num">2</th><th class="num">3</th><th class="num">4</th><th class="num">5</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="desc">Pure guess, no evidence</td>
+          <td class="desc">People said they would</td>
+          <td class="desc">Some use, but small or free</td>
+          <td class="desc">Real behaviour at small scale</td>
+          <td class="desc">Proven at scale with data</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="hint" style="margin:7px 0 0;">Score the evidence, not your gut: did they <em>say</em> it, or <em>do</em> it? Your riskiest assumption = would kill you if wrong <strong>and</strong> has the lowest score.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">4.</span> Candidate six-month goals — <span class="sub">outcomes true by month 6, not activities</span></h2>
+    <table class="goals">
+      <thead>
+        <tr>
+          <th class="num">#</th>
+          <th>Candidate goal (what will be true by month 6?)</th>
+          <th style="width:26%;">Tests assumption #</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td></td><td></td></tr>
+        <tr><td class="num">2</td><td></td><td></td></tr>
+        <tr><td class="num">3</td><td></td><td></td></tr>
+        <tr><td class="num">4</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="foot">Six-Month Planning Workshop · Participant Worksheets · page 2</div>
+
+</body>
+</html>

@@ -12,12 +12,12 @@ Index of all SEIC founder-training sessions. Sessions run **Mon / Wed / Fri**, s
 
 ## Session index
 
-| # | Date | Day | Topic | Deliverable | Status |
-|---|------|-----|-------|-------------|--------|
-| 01 | 2026-09-25 | Fri | [Business Model Canvas](2026-09-25-business-model-canvas/) | — | 🟡 to confirm |
-| 02 | 2026-09-28 | Mon | [Accounts & Finance](2026-09-28-accounts-and-finance/) | — | 🟡 to confirm |
-| 03 | 2026-09-30 | Wed | [Law](2026-09-30-law/) | — | 🟡 to confirm |
-| 04 | 2026-10-02 | Fri | [Sales Tax](2026-10-02-sales-tax/) | — | 🟡 to confirm |
+| # | Date | Day | Topic | Mentor | Deliverable | Status |
+|---|------|-----|-------|--------|-------------|--------|
+| 01 | 2026-09-25 | Fri | [Business Model Canvas](2026-09-25-business-model-canvas/) | Faizan Lagari | Worksheet A — Vision-to-Goals Canvas | 🟡 to confirm |
+| 02 | 2026-09-28 | Mon | [Accounts & Finance](2026-09-28-accounts-and-finance/) | _to confirm_ | — | 🟡 to confirm |
+| 03 | 2026-09-30 | Wed | [Law](2026-09-30-law/) | _to confirm_ | — | 🟡 to confirm |
+| 04 | 2026-10-02 | Fri | [Sales Tax](2026-10-02-sales-tax/) | _to confirm_ | — | 🟡 to confirm |
 
 > ⚠️ **Dates & topics above are a best-guess scaffold.** Confirm the real session topics/dates and add any missing sessions (09 sessions ran from 25 Sep → 14 Oct).
 

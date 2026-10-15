@@ -33,7 +33,7 @@ export const VISION =
 
 export const REPO_URL = "https://github.com/happyhealthapp/happy-health";
 export const ASSIGNMENTS_URL = `${REPO_URL}/tree/main/assignments`;
-export const PITCH_URL = `${import.meta.env.BASE_URL}pitch/happy-health-pitch.pdf`;
+export const PITCH_URL = `${import.meta.env.BASE_URL}assignments/happy-health-pitch.pdf`;
 
 /** Confirmed sessions (any order — rendered sorted by date). */
 export const sessions: Session[] = [

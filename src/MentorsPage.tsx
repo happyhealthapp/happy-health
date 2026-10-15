@@ -61,6 +61,45 @@ function AssignmentRow({ session }: { session: Session }) {
   );
 }
 
+function PitchRow() {
+  return (
+    <tr className="assignment-pitch-row">
+      <td className="assignment-date">
+        <span className="day-chip">PDF</span>
+        Any time
+      </td>
+      <td className="assignment-mentor">{FOUNDER}</td>
+      <td className="assignment-cell">
+        <span className="assignment-topic">
+          Five-minute pitch deck (7 slides)
+        </span>
+        <span className="pitch-actions">
+          <a
+            className="assignment-link"
+            href={PITCH_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View
+          </a>
+          <a className="assignment-link" href={PITCH_URL} download>
+            Download
+          </a>
+          <a
+            className="assignment-link"
+            href={PITCH_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Opens the PDF — use the print button or Ctrl/Cmd+P to print all pages"
+          >
+            Print
+          </a>
+        </span>
+      </td>
+    </tr>
+  );
+}
+
 export default function MentorsPage() {
   const sorted = useMemo(() => [...sessions].sort(byDate), []);
 
@@ -124,6 +163,7 @@ export default function MentorsPage() {
                       session={session}
                     />
                   ))}
+                  <PitchRow />
                 </tbody>
               </table>
             </div>

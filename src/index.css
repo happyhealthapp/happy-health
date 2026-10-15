@@ -477,6 +477,16 @@ section {
   font-style: italic;
 }
 
+.assignment-pitch-row {
+  background: var(--accent-soft);
+}
+
+.pitch-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+}
+
 .empty {
   color: var(--muted);
 }

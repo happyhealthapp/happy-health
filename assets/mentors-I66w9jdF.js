@@ -1,0 +1,1 @@
+import{c as r,j as o,r as e}from"./index-CaWTmezU.js";import{M as n}from"./MentorsPage-j2BCLXPS.js";const t=document.getElementById("root");if(!t)throw new Error("Root container #root was not found in mentors/index.html");r.createRoot(t).render(o.jsx(e.StrictMode,{children:o.jsx(n,{})}));

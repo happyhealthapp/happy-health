@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import {
-  ASSIGNMENTS_URL,
   FOUNDER,
   FOUNDER_EMAIL,
   STARTUP,
+  VISION,
   assignmentUrl,
   byDate,
   dayLabel,
@@ -14,6 +14,7 @@ import {
 import { buildIcs, downloadIcs } from "./lib/ics";
 
 const BASE = import.meta.env.BASE_URL;
+const HOME_URL = `${BASE}home/`;
 const ICS_FILENAME = "happy-health-seic-schedule.ics";
 
 type IconName = "print" | "download" | "external";
@@ -95,13 +96,14 @@ export default function MentorsPage() {
           <span className="brand-name">{STARTUP}</span>
         </a>
         <nav className="site-nav" aria-label="Primary">
-          <a href={ASSIGNMENTS_URL}>GitHub</a>
+          <a href={HOME_URL}>Happy Health website</a>
         </nav>
       </header>
 
       <main id="top">
         <section className="mentor-hero" aria-labelledby="hero-title">
           <h1 id="hero-title">{STARTUP}</h1>
+          <p className="vision-statement mentor-vision">{VISION}</p>
           <dl className="identity">
             <div className="identity-item">
               <dt>Founder</dt>

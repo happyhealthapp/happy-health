@@ -12,6 +12,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "index.html",
+        home: "home/index.html",
         mentors: "mentors/index.html",
       },
     },

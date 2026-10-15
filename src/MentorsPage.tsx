@@ -11,46 +11,23 @@ import {
   sessions,
   type Session,
 } from "./data/sessions";
-import { buildIcs, downloadIcs } from "./lib/ics";
 
 const BASE = import.meta.env.BASE_URL;
 const HOME_URL = `${BASE}home/`;
-const ICS_FILENAME = "happy-health-seic-schedule.ics";
 
-type IconName = "print" | "download" | "external";
-
-function Icon({ name }: { name: IconName }) {
-  const common = {
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.8,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    "aria-hidden": "true" as const,
-    width: 18,
-    height: 18,
-  };
-  if (name === "print") {
-    return (
-      <svg {...common}>
-        <path d="M6 9V3h12v6" />
-        <path d="M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2" />
-        <path d="M6 14h12v7H6z" />
-      </svg>
-    );
-  }
-  if (name === "download") {
-    return (
-      <svg {...common}>
-        <path d="M12 3v12" />
-        <path d="m7 10 5 5 5-5" />
-        <path d="M5 21h14" />
-      </svg>
-    );
-  }
+function Icon() {
   return (
-    <svg {...common}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      width={18}
+      height={18}
+    >
       <path d="M14 4h6v6" />
       <path d="M20 4 11 13" />
       <path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" />
@@ -73,7 +50,7 @@ function AssignmentRow({ session }: { session: Session }) {
         <span className="assignment-topic">{session.topic}</span>
         {url ? (
           <a className="assignment-link" href={url}>
-            Open assignment <Icon name="external" />
+            Open assignment <Icon />
           </a>
         ) : (
           <span className="assignment-pending">To be linked</span>
@@ -120,22 +97,6 @@ export default function MentorsPage() {
               <dd>{STARTUP}</dd>
             </div>
           </dl>
-          <div className="hero-actions no-print">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => window.print()}
-            >
-              <Icon name="print" /> Print / Save as PDF
-            </button>
-            <button
-              type="button"
-              className="btn btn-ghost"
-              onClick={() => downloadIcs(ICS_FILENAME, buildIcs(sorted))}
-            >
-              <Icon name="download" /> Download schedule (.ics)
-            </button>
-          </div>
         </section>
 
         <section className="assignments" aria-labelledby="assignments-title">

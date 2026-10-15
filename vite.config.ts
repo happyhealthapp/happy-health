@@ -8,6 +8,14 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/happy-health/",
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        mentors: "mentors/index.html",
+      },
+    },
+  },
   server: {
     port: 5173,
     strictPort: true,

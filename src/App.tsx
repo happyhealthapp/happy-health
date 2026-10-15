@@ -1,7 +1,14 @@
 import type { ReactNode } from "react";
+import {
+  ASSIGNMENTS_URL,
+  FOUNDER,
+  FOUNDER_EMAIL,
+  PROGRAM,
+  STARTUP,
+} from "./data/sessions";
 
-const ASSIGNMENTS_URL =
-  "https://github.com/happyhealthapp/happy-health/tree/main/assignments";
+const BASE = import.meta.env.BASE_URL;
+const MENTORS_URL = `${BASE}mentors/`;
 
 type Service = {
   title: string;
@@ -79,11 +86,11 @@ export default function App() {
           <span className="brand-mark" aria-hidden="true">
             +
           </span>
-          <span className="brand-name">Happy Health</span>
+          <span className="brand-name">{STARTUP}</span>
         </a>
         <nav className="site-nav" aria-label="Primary">
           <a href="#services">Services</a>
-          <a href="#mentors">For mentors</a>
+          <a href={MENTORS_URL}>For mentors</a>
         </nav>
       </header>
 
@@ -94,11 +101,12 @@ export default function App() {
             Trusted medical care, <span>delivered to your door</span>.
           </h1>
           <p className="lede">
-            Happy Health connects patients and families to verified nurses,
-            doctors, and medical equipment — on demand, at home.
+            {STARTUP} connects patients and families to verified nurses,
+            doctors, and medical equipment — on demand, at home. A {PROGRAM}{" "}
+            founder-program venture founded by {FOUNDER}.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href={ASSIGNMENTS_URL}>
+            <a className="btn btn-primary" href={MENTORS_URL}>
               For mentors — view assignments
             </a>
             <a className="btn btn-ghost" href="#services">
@@ -131,24 +139,30 @@ export default function App() {
         >
           <h2 id="mentors-title">For mentors &amp; reviewers</h2>
           <p>
-            Every SEIC session&apos;s notes, assignment, and resources are
-            organised by date in the repository. Open the assignments index to
-            review progress.
+            Sessions run every Mon / Wed / Fri, each led by a different guest
+            mentor. Open the mentor hub to follow the session calendar and the
+            matching assignments, or browse everything directly on GitHub.
           </p>
-          <a className="btn btn-primary" href={ASSIGNMENTS_URL}>
-            Open assignments on GitHub
-          </a>
+          <div className="hero-actions">
+            <a className="btn btn-primary" href={MENTORS_URL}>
+              Open the mentor hub
+            </a>
+            <a className="btn btn-ghost" href={ASSIGNMENTS_URL}>
+              Assignments on GitHub
+            </a>
+          </div>
         </section>
       </main>
 
       <footer className="site-footer">
         <p>
-          Built as part of the <strong>SEIC</strong> (Sindh Enterprise
-          Incubation Center) founder program ·{" "}
-          <a href="mailto:info@seic.ac.pk">info@seic.ac.pk</a>
+          <strong>{STARTUP}</strong> · founded by {FOUNDER} · built as part of
+          the <strong>{PROGRAM}</strong> (Sindh Enterprise Incubation Center)
+          founder program ·{" "}
+          <a href={`mailto:${FOUNDER_EMAIL}`}>{FOUNDER_EMAIL}</a>
         </p>
         <p className="muted">
-          © {new Date().getFullYear()} Happy Health
+          © {new Date().getFullYear()} {STARTUP}
         </p>
       </footer>
     </>

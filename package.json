@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "deploy:pages": "npm run build && git branch -f gh-pages HEAD && rm -rf /tmp/gh-pages-dist && git worktree add /tmp/gh-pages-dist gh-pages && cp -r dist/* /tmp/gh-pages-dist/ && git -C /tmp/gh-pages-dist add -A && git -C /tmp/gh-pages-dist commit -q -m \"deploy: pages build $(date +%F)\" && git push origin gh-pages --force && git worktree remove /tmp/gh-pages-dist --force"
+    "deploy:pages": "npm run build && rm -rf /tmp/gh-pages-dist && git worktree prune && git branch -f gh-pages HEAD && git worktree add /tmp/gh-pages-dist gh-pages && find /tmp/gh-pages-dist -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} + && cp -a dist/. /tmp/gh-pages-dist/ && git -C /tmp/gh-pages-dist add -A && git -C /tmp/gh-pages-dist commit -q -m \"deploy: pages build $(date +%F-%H%M%S)\" && git push origin gh-pages --force && git worktree remove /tmp/gh-pages-dist --force && git worktree prune"
   },
   "dependencies": {
     "react": "^18.3.1",

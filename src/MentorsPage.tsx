@@ -14,7 +14,6 @@ import {
 import { buildIcs, downloadIcs } from "./lib/ics";
 
 const BASE = import.meta.env.BASE_URL;
-const WEBSITE_URL = BASE;
 const ICS_FILENAME = "happy-health-seic-schedule.ics";
 
 type IconName = "print" | "download" | "external";
@@ -85,12 +84,11 @@ function AssignmentRow({ session }: { session: Session }) {
 
 export default function MentorsPage() {
   const sorted = useMemo(() => [...sessions].sort(byDate), []);
-  const websiteAbsolute = new URL(WEBSITE_URL, window.location.origin).toString();
 
   return (
     <>
       <header className="site-header">
-        <a className="brand" href={WEBSITE_URL}>
+        <a className="brand" href={BASE}>
           <span className="brand-mark" aria-hidden="true">
             +
           </span>
@@ -98,7 +96,6 @@ export default function MentorsPage() {
         </a>
         <nav className="site-nav" aria-label="Primary">
           <a href={ASSIGNMENTS_URL}>GitHub</a>
-          <a href={WEBSITE_URL}>Website</a>
         </nav>
       </header>
 
@@ -136,9 +133,6 @@ export default function MentorsPage() {
             >
               <Icon name="download" /> Download schedule (.ics)
             </button>
-            <a className="btn btn-ghost" href={WEBSITE_URL}>
-              <Icon name="external" /> Visit website
-            </a>
           </div>
         </section>
 
@@ -176,7 +170,7 @@ export default function MentorsPage() {
           <a href={`mailto:${FOUNDER_EMAIL}`}>{FOUNDER_EMAIL}</a>
         </p>
         <p className="muted">
-          Website: <a href={WEBSITE_URL}>{websiteAbsolute}</a>
+          © {new Date().getFullYear()} {STARTUP}
         </p>
       </footer>
     </>

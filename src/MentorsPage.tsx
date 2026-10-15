@@ -1,33 +1,21 @@
 import { useMemo } from "react";
 import {
   ASSIGNMENTS_URL,
-  CADENCE,
   FOUNDER,
   FOUNDER_EMAIL,
-  PROGRAM,
   STARTUP,
   assignmentUrl,
   byDate,
   dayLabel,
-  formatDate,
   formatDayMonth,
-  initials,
   sessions,
-  weekStart,
   type Session,
-  type SessionStatus,
 } from "./data/sessions";
 import { buildIcs, downloadIcs } from "./lib/ics";
 
 const BASE = import.meta.env.BASE_URL;
 const WEBSITE_URL = BASE;
 const ICS_FILENAME = "happy-health-seic-schedule.ics";
-
-const STATUS_LABEL: Record<SessionStatus, string> = {
-  done: "Completed",
-  draft: "In progress",
-  upcoming: "Upcoming",
-};
 
 type IconName = "print" | "download" | "external";
 
@@ -70,58 +58,33 @@ function Icon({ name }: { name: IconName }) {
   );
 }
 
-function StatusBadge({ status }: { status: SessionStatus }) {
-  return <span className={`badge badge-${status}`}>{STATUS_LABEL[status]}</span>;
-}
-
-function SessionCard({ session }: { session: Session }) {
+function AssignmentRow({ session }: { session: Session }) {
   const url = assignmentUrl(session);
   return (
-    <li className="session">
-      <div className="session-when" title={formatDate(session.date)}>
+    <tr>
+      <td className="assignment-date">
         <span className="day-chip">{dayLabel(session.date)}</span>
-        <span className="session-date">{formatDayMonth(session.date)}</span>
-      </div>
-      <div className="session-body">
-        <div className="session-head">
-          <h3>{session.topic}</h3>
-          <StatusBadge status={session.status} />
-        </div>
-        <p className="session-mentor">
-          <span className="mentor-avatar" aria-hidden="true">
-            {initials(session.mentor) || "?"}
-          </span>
-          <span>
-            <span className="mentor-role">Guest mentor</span>{" "}
-            <strong>{session.mentor || "To be announced"}</strong>
-          </span>
-        </p>
+        {formatDayMonth(session.date)}
+      </td>
+      <td className="assignment-mentor">
+        {session.mentor || "To be announced"}
+      </td>
+      <td className="assignment-cell">
+        <span className="assignment-topic">{session.topic}</span>
         {url ? (
-          <a className="session-link" href={url}>
-            View assignment <Icon name="external" />
+          <a className="assignment-link" href={url}>
+            Open assignment <Icon name="external" />
           </a>
         ) : (
-          <span className="session-pending">Assignment to be linked</span>
+          <span className="assignment-pending">To be linked</span>
         )}
-      </div>
-    </li>
+      </td>
+    </tr>
   );
 }
 
 export default function MentorsPage() {
   const sorted = useMemo(() => [...sessions].sort(byDate), []);
-
-  const weeks = useMemo(() => {
-    const map = new Map<string, Session[]>();
-    for (const session of sorted) {
-      const key = weekStart(session.date);
-      const existing = map.get(key);
-      if (existing) existing.push(session);
-      else map.set(key, [session]);
-    }
-    return Array.from(map.entries());
-  }, [sorted]);
-
   const websiteAbsolute = new URL(WEBSITE_URL, window.location.origin).toString();
 
   return (
@@ -134,23 +97,30 @@ export default function MentorsPage() {
           <span className="brand-name">{STARTUP}</span>
         </a>
         <nav className="site-nav" aria-label="Primary">
+          <a href={ASSIGNMENTS_URL}>GitHub</a>
           <a href={WEBSITE_URL}>Website</a>
-          <a href={ASSIGNMENTS_URL}>Assignments</a>
         </nav>
       </header>
 
       <main id="top">
         <section className="mentor-hero" aria-labelledby="hero-title">
-          <p className="eyebrow">{PROGRAM} · Founder program</p>
-          <h1 id="hero-title">
-            Mentor hub — session calendar &amp; assignments
-          </h1>
-          <p className="lede">
-            Everything a mentor needs to follow <strong>{STARTUP}</strong>,
-            founded by <strong>{FOUNDER}</strong>: the {CADENCE} training
-            calendar, the guest mentor for each session, and the matching
-            assignment.
-          </p>
+          <h1 id="hero-title">{STARTUP}</h1>
+          <dl className="identity">
+            <div className="identity-item">
+              <dt>Founder</dt>
+              <dd>{FOUNDER}</dd>
+            </div>
+            <div className="identity-item">
+              <dt>Email</dt>
+              <dd>
+                <a href={`mailto:${FOUNDER_EMAIL}`}>{FOUNDER_EMAIL}</a>
+              </dd>
+            </div>
+            <div className="identity-item">
+              <dt>Startup</dt>
+              <dd>{STARTUP}</dd>
+            </div>
+          </dl>
           <div className="hero-actions no-print">
             <button
               type="button"
@@ -172,58 +142,37 @@ export default function MentorsPage() {
           </div>
         </section>
 
-        <section className="facts" aria-label="At a glance">
-          <div className="fact">
-            <span className="fact-label">Founder</span>
-            <span className="fact-value">{FOUNDER}</span>
-          </div>
-          <div className="fact">
-            <span className="fact-label">Startup</span>
-            <span className="fact-value">{STARTUP}</span>
-          </div>
-          <div className="fact">
-            <span className="fact-label">Sessions</span>
-            <span className="fact-value">{CADENCE}</span>
-          </div>
-          <div className="fact">
-            <span className="fact-label">Recorded</span>
-            <span className="fact-value">
-              {sorted.length} session{sorted.length === 1 ? "" : "s"}
-            </span>
-          </div>
-        </section>
-
-        <section className="calendar" aria-labelledby="calendar-title">
-          <h2 id="calendar-title">Session calendar</h2>
-          <p className="section-note">
-            A new guest mentor trains us every {CADENCE}. Sessions are grouped
-            by week.
-          </p>
-
-          {weeks.length === 0 ? (
-            <p className="empty">No sessions recorded yet.</p>
+        <section className="assignments" aria-labelledby="assignments-title">
+          <h2 id="assignments-title">Assignments</h2>
+          {sorted.length === 0 ? (
+            <p className="empty">No assignments yet.</p>
           ) : (
-            weeks.map(([week, items]) => (
-              <div className="week" key={week}>
-                <h3 className="week-label">Week of {formatDayMonth(week)}</h3>
-                <ol className="session-list">
-                  {items.map((session) => (
-                    <SessionCard
+            <div className="table-wrap">
+              <table className="assignment-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Mentor</th>
+                    <th scope="col">Assignment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sorted.map((session) => (
+                    <AssignmentRow
                       key={`${session.date}-${session.n}`}
                       session={session}
                     />
                   ))}
-                </ol>
-              </div>
-            ))
+                </tbody>
+              </table>
+            </div>
           )}
         </section>
       </main>
 
       <footer className="site-footer">
         <p>
-          <strong>{STARTUP}</strong> · founded by {FOUNDER} · {PROGRAM} founder
-          program ·{" "}
+          <strong>{STARTUP}</strong> · {FOUNDER} ·{" "}
           <a href={`mailto:${FOUNDER_EMAIL}`}>{FOUNDER_EMAIL}</a>
         </p>
         <p className="muted">

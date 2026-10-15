@@ -290,7 +290,6 @@ section {
 .site-footer .muted {
   margin-top: 0.4rem;
   font-size: 0.85rem;
-  opacity: 0.85;
 }
 
 @media (max-width: 640px) {

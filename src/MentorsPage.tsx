@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import {
   FOUNDER,
   FOUNDER_EMAIL,
+  PITCH_URL,
   STARTUP,
   VISION,
   assignmentUrl,
@@ -74,6 +75,9 @@ export default function MentorsPage() {
         </a>
         <nav className="site-nav" aria-label="Primary">
           <a href={HOME_URL}>Happy Health website</a>
+          <a href={PITCH_URL} target="_blank" rel="noopener noreferrer">
+            Pitch (PDF)
+          </a>
         </nav>
       </header>
 

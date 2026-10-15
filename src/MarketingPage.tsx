@@ -3,6 +3,7 @@ import {
   ASSIGNMENTS_URL,
   FOUNDER,
   FOUNDER_EMAIL,
+  PITCH_URL,
   PROGRAM,
   STARTUP,
   VISION,
@@ -91,6 +92,7 @@ export default function MarketingPage() {
         </a>
         <nav className="site-nav" aria-label="Primary">
           <a href="#services">Services</a>
+          <a href="#pitch">Pitch</a>
           <a href={MENTORS_URL}>For mentors</a>
         </nav>
       </header>
@@ -107,7 +109,15 @@ export default function MarketingPage() {
             founder-program venture founded by {FOUNDER}.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href={MENTORS_URL}>
+            <a
+              className="btn btn-primary"
+              href={PITCH_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View our 5-minute pitch (PDF)
+            </a>
+            <a className="btn btn-ghost" href={MENTORS_URL}>
               For mentors — view assignments
             </a>
             <a className="btn btn-ghost" href="#services">
@@ -139,6 +149,28 @@ export default function MarketingPage() {
                 <p>{service.description}</p>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section id="pitch" className="pitch" aria-labelledby="pitch-title">
+          <h2 id="pitch-title">The five-minute pitch</h2>
+          <p>
+            The whole business on seven slides — the problem, the people, how it
+            works, and where it is going. Open it in your browser, or download
+            the PDF to keep and share.
+          </p>
+          <div className="hero-actions">
+            <a
+              className="btn btn-primary"
+              href={PITCH_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open the pitch (PDF)
+            </a>
+            <a className="btn btn-ghost" href={PITCH_URL} download>
+              Download the pitch (PDF)
+            </a>
           </div>
         </section>
 

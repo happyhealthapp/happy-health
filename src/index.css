@@ -207,10 +207,17 @@ section {
 }
 
 .services h2,
-.mentors h2 {
+.mentors h2,
+.pitch h2 {
   margin: 0 0 0.5rem;
   font-size: clamp(1.6rem, 3.5vw, 2.2rem);
   letter-spacing: -0.02em;
+}
+
+.pitch p {
+  max-width: 60ch;
+  margin: 0.5rem 0 0;
+  color: var(--muted);
 }
 
 .cards {

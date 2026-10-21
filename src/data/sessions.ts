@@ -44,8 +44,30 @@ export const REPO_URL = "https://github.com/happyhealthapp/happy-health";
 export const ASSIGNMENTS_URL = `${REPO_URL}/tree/main/assignments`;
 export const PITCH_URL = `${import.meta.env.BASE_URL}assignments/happy-health-pitch.pdf`;
 
+const BMC_BASE = `${import.meta.env.BASE_URL}assignments/2026-09-25-business-model-canvas`;
+const FINANCE_BASE = `${import.meta.env.BASE_URL}assignments/2026-09-28-accounts-and-finance`;
 const WORKSHOP_BASE = `${import.meta.env.BASE_URL}assignments/2026-10-14-six-month-planning-workshop`;
 const SPRINT_BASE = `${import.meta.env.BASE_URL}assignments/data-driven-sprinting`;
+
+/** Deliverables from the Business Model Canvas session (session 01). */
+export const BMC_WORKSHEETS: WorksheetRef[] = [
+  {
+    label: "Business Model Canvas — landscape (PKR)",
+    url: `${BMC_BASE}/business-model-canvas-landscape-pkr.pdf`,
+  },
+];
+
+/** Deliverables from the Accounts & Finance session (session 02). */
+export const FINANCE_WORKSHEETS: WorksheetRef[] = [
+  {
+    label: "Financial Model — combined statements (PDF)",
+    url: `${FINANCE_BASE}/financial-model-combined-clean.pdf`,
+  },
+  {
+    label: "Financial Model — clean spreadsheet (XLSX)",
+    url: `${FINANCE_BASE}/financial-model-clean.xlsx`,
+  },
+];
 
 /** Fixed, filled-in worksheets from the Six-Month Planning Workshop (session 09). */
 export const WORKSHOP_WORKSHEETS: WorksheetRef[] = [
@@ -87,6 +109,7 @@ export const sessions: Session[] = [
     topic: "Business Model Canvas",
     mentor: "Faizan Lagari",
     folder: "2026-09-25-business-model-canvas",
+    worksheets: BMC_WORKSHEETS,
     status: "done",
   },
   {
@@ -95,6 +118,7 @@ export const sessions: Session[] = [
     topic: "Accounts & Finance",
     mentor: "Dr. Mohsin Ali",
     folder: "2026-09-28-accounts-and-finance",
+    worksheets: FINANCE_WORKSHEETS,
     status: "done",
   },
   {

@@ -8,7 +8,7 @@
 | Day | Mon |
 | Session # | 02 |
 | Topic | Accounts & Finance |
-| Facilitator | _to confirm_ |
+| Facilitator | Dr. Mohsin Ali |
 
 ## Learning objectives
 
@@ -21,11 +21,12 @@
 
 ## Resources
 
-- 
+- [Financial Model — combined statements (PDF)](financial-model-combined-clean.pdf) — submitted 2026-10-21
+- [Financial Model — clean spreadsheet (XLSX)](financial-model-clean.xlsx) — submitted 2026-10-21
 
 ## Action items
 
 - [ ] 
 
 ---
-*Status: 🟡 in progress*
+*Status: 🟢 submitted*

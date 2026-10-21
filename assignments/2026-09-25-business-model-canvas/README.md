@@ -21,7 +21,7 @@
 
 ## Resources
 
-- _No handout submitted yet._
+- [Business Model Canvas — landscape (PKR)](business-model-canvas-landscape-pkr.pdf) — submitted 2026-10-21 (updated PDF; earlier PNG draft removed)
 
 > ⚠️ **Correction (2026-10-17).** This folder previously held a worksheet titled
 > "Vision-to-Goals Canvas". That page is **not** from this session — it belongs to the
@@ -33,4 +33,4 @@
 - [ ] 
 
 ---
-*Status: 🟡 in progress*
+*Status: 🟢 submitted*

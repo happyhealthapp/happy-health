@@ -14,8 +14,8 @@ Index of all SEIC founder-training sessions. Sessions run **Mon / Wed / Fri**, s
 
 | # | Date | Day | Topic | Mentor | Deliverable | Status |
 |---|------|-----|-------|--------|-------------|--------|
-| 01 | 2026-09-25 | Fri | [Business Model Canvas](2026-09-25-business-model-canvas/) | Faizan Lagari | _not submitted_ | 🟡 to confirm |
-| 02 | 2026-09-28 | Mon | [Accounts & Finance](2026-09-28-accounts-and-finance/) | _to confirm_ | — | 🟡 to confirm |
+| 01 | 2026-09-25 | Fri | [Business Model Canvas](2026-09-25-business-model-canvas/) | Faizan Lagari | Business Model Canvas — landscape (PKR) | 🟢 submitted |
+| 02 | 2026-09-28 | Mon | [Accounts & Finance](2026-09-28-accounts-and-finance/) | Dr. Mohsin Ali | Financial Model — combined statements (PDF) + clean spreadsheet (XLSX) | 🟢 submitted |
 | 03 | 2026-09-30 | Wed | [Law](2026-09-30-law/) | _to confirm_ | — | 🟡 to confirm |
 | 04 | 2026-10-02 | Fri | [Sales Tax](2026-10-02-sales-tax/) | _to confirm_ | — | 🟡 to confirm |
 | 09 | 2026-10-14 | Wed | [Six-Month Planning Workshop](2026-10-14-six-month-planning-workshop/) | _to confirm_ | Worksheets A–E (fixed PDFs) + notes | 🟢 submitted |

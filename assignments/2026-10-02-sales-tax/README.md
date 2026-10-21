@@ -8,7 +8,7 @@
 | Day | Fri |
 | Session # | 04 |
 | Topic | Sales Tax |
-| Facilitator | _to confirm_ |
+| Facilitator | — |
 
 ## Learning objectives
 

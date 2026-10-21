@@ -15,7 +15,7 @@ export type Session = {
   date: string;
   /** Topic the guest mentor taught. */
   topic: string;
-  /** Guest mentor who ran the session. "" means "to be announced". */
+  /** Guest mentor who ran the session. "" renders as "—". */
   mentor: string;
   /** Assignment folder under assignments/ in the repo, if one exists. */
   folder?: string;
@@ -134,7 +134,7 @@ export const sessions: Session[] = [
     n: 10,
     date: "2026-10-20",
     topic: "Data-Driven Sprinting",
-    mentor: "",
+    mentor: "Faizan Lagari",
     folder: "2026-10-20-data-driven-sprinting",
     worksheets: SPRINT_WORKSHEETS,
     status: "done",

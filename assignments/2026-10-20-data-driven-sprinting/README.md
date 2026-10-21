@@ -7,6 +7,7 @@
 | Field | Value |
 |-------|-------|
 | Week | 1 (20–24 Oct 2026) |
+| Facilitator | Faizan Lagari |
 | Artifact | Weekly Card |
 | Startup | Happy Health |
 | Team | THEO |

@@ -45,7 +45,7 @@ function AssignmentRow({ session }: { session: Session }) {
         {formatDayMonth(session.date)}
       </td>
       <td className="assignment-mentor">
-        {session.mentor || "To be announced"}
+        {session.mentor || "—"}
       </td>
       <td className="assignment-cell">
         <span className="assignment-topic">{session.topic}</span>

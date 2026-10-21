@@ -12,7 +12,7 @@
 | Day | Wed |
 | Session # | 09 _\(inferred\)_ |
 | Topic | Six-Month Planning Workshop |
-| Facilitator | _to confirm_ |
+| Facilitator | — |
 | Organisation | Sindh Enterprise Incubation Center (SEIC) |
 | Startup | Happy Health |
 | Team | THEO |

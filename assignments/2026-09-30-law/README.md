@@ -8,7 +8,7 @@
 | Day | Wed |
 | Session # | 03 |
 | Topic | Law |
-| Facilitator | _to confirm_ |
+| Facilitator | — |
 
 ## Learning objectives
 

@@ -21,7 +21,12 @@
 
 ## Resources
 
-- [`worksheet.md`](worksheet.md) — Vision-to-Goals Canvas (session handout)
+- _No handout submitted yet._
+
+> ⚠️ **Correction (2026-10-17).** This folder previously held a worksheet titled
+> "Vision-to-Goals Canvas". That page is **not** from this session — it belongs to the
+> Six-Month Planning Workshop, and has been moved to
+> [`../2026-10-14-six-month-planning-workshop/`](../2026-10-14-six-month-planning-workshop/).
 
 ## Action items
 

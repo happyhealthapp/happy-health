@@ -49,28 +49,35 @@ function AssignmentRow({ session }: { session: Session }) {
       </td>
       <td className="assignment-cell">
         <span className="assignment-topic">{session.topic}</span>
-        {session.worksheet ? (
-          <span className="pitch-actions">
-            <a
-              className="assignment-link"
-              href={session.worksheet}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View
-            </a>
-            <a className="assignment-link" href={session.worksheet} download>
-              Download
-            </a>
-            <a
-              className="assignment-link"
-              href={session.worksheet}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Opens the PDF — use the print button or Ctrl/Cmd+P to print"
-            >
-              Print
-            </a>
+        {session.worksheets?.length ? (
+          <span className="worksheet-list">
+            {session.worksheets.map((w) => (
+              <span className="worksheet-item" key={w.url}>
+                <span className="assignment-topic">{w.label}</span>
+                <span className="pitch-actions">
+                  <a
+                    className="assignment-link"
+                    href={w.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View
+                  </a>
+                  <a className="assignment-link" href={w.url} download>
+                    Download
+                  </a>
+                  <a
+                    className="assignment-link"
+                    href={w.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Opens the PDF — use the print button or Ctrl/Cmd+P to print"
+                  >
+                    Print
+                  </a>
+                </span>
+              </span>
+            ))}
           </span>
         ) : url ? (
           <a className="assignment-link" href={url}>

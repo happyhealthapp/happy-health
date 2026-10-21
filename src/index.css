@@ -487,6 +487,16 @@ section {
   gap: 0.35rem 1.1rem;
 }
 
+.worksheet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.worksheet-item {
+  display: block;
+}
+
 .empty {
   color: var(--muted);
 }

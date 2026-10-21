@@ -19,9 +19,16 @@ export type Session = {
   mentor: string;
   /** Assignment folder under assignments/ in the repo, if one exists. */
   folder?: string;
-  /** Fillable/printable worksheet PDF served from public/, if one exists. */
-  worksheet?: string;
+  /** Fillable/printable worksheet PDFs served from public/, if any exist. */
+  worksheets?: WorksheetRef[];
   status: SessionStatus;
+};
+
+export type WorksheetRef = {
+  /** Human label shown above the actions, e.g. "Worksheet A — Vision-to-Goals Canvas". */
+  label: string;
+  /** URL of the PDF, normally built from import.meta.env.BASE_URL. */
+  url: string;
 };
 
 export const FOUNDER = "Theo";
@@ -36,25 +43,76 @@ export const VISION =
 export const REPO_URL = "https://github.com/happyhealthapp/happy-health";
 export const ASSIGNMENTS_URL = `${REPO_URL}/tree/main/assignments`;
 export const PITCH_URL = `${import.meta.env.BASE_URL}assignments/happy-health-pitch.pdf`;
-export const WORKSHEET_URL = `${import.meta.env.BASE_URL}assignments/2026-09-25-business-model-canvas/worksheet.pdf`;
+
+const WORKSHOP_BASE = `${import.meta.env.BASE_URL}assignments/2026-10-14-six-month-planning-workshop`;
+const SPRINT_BASE = `${import.meta.env.BASE_URL}assignments/data-driven-sprinting`;
+
+/** Fixed, filled-in worksheets from the Six-Month Planning Workshop (session 09). */
+export const WORKSHOP_WORKSHEETS: WorksheetRef[] = [
+  {
+    label: "Worksheet A — Vision-to-Goals Canvas",
+    url: `${WORKSHOP_BASE}/worksheet-a-vision-to-goals-canvas-fixed.pdf`,
+  },
+  {
+    label: "Worksheet B — Goal Prioritiser",
+    url: `${WORKSHOP_BASE}/worksheet-b-goal-prioritiser-fixed.pdf`,
+  },
+  {
+    label: "Worksheet C — KPI Tree",
+    url: `${WORKSHOP_BASE}/worksheet-c-kpi-tree-fixed.pdf`,
+  },
+  {
+    label: "Worksheet D — Six-Month Plan on a Page",
+    url: `${WORKSHOP_BASE}/worksheet-d-six-month-plan-on-a-page-fixed.pdf`,
+  },
+  {
+    label: "Worksheet E — Accountability Sheet",
+    url: `${WORKSHOP_BASE}/worksheet-e-accountability-sheet-fixed.pdf`,
+  },
+];
+
+/** Weekly card from the Data-Driven Sprinting block (week 1: 20–24 Oct 2026). */
+export const SPRINT_WORKSHEETS: WorksheetRef[] = [
+  {
+    label: "Weekly Card — Week 1 (20–24 Oct)",
+    url: `${SPRINT_BASE}/weekly-card-week-1.pdf`,
+  },
+];
 
 /** Confirmed sessions (any order — rendered sorted by date). */
 export const sessions: Session[] = [
   {
     n: 1,
-    date: "2026-09-14",
+    date: "2026-09-25",
+    topic: "Business Model Canvas",
+    mentor: "Faizan Lagari",
+    folder: "2026-09-25-business-model-canvas",
+    status: "done",
+  },
+  {
+    n: 2,
+    date: "2026-09-28",
     topic: "Accounts & Finance",
     mentor: "Dr. Mohsin Ali",
     folder: "2026-09-28-accounts-and-finance",
     status: "done",
   },
   {
-    n: 2,
-    date: "2026-09-25",
-    topic: "Business Model Canvas",
-    mentor: "Faizan Lagari",
-    folder: "2026-09-25-business-model-canvas",
-    worksheet: WORKSHEET_URL,
+    n: 9,
+    date: "2026-10-14",
+    topic: "Six-Month Planning Workshop",
+    mentor: "",
+    folder: "2026-10-14-six-month-planning-workshop",
+    worksheets: WORKSHOP_WORKSHEETS,
+    status: "done",
+  },
+  {
+    n: 10,
+    date: "2026-10-20",
+    topic: "Data-Driven Sprinting",
+    mentor: "",
+    folder: "2026-10-20-data-driven-sprinting",
+    worksheets: SPRINT_WORKSHEETS,
     status: "done",
   },
 ];

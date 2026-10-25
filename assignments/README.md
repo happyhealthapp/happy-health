@@ -20,6 +20,7 @@ Index of all SEIC founder-training sessions. Sessions run **Mon / Wed / Fri**, s
 | 04 | 2026-10-02 | Fri | [Sales Tax](2026-10-02-sales-tax/) | — | — | 🟡 |
 | 09 | 2026-10-14 | Wed | [Six-Month Planning Workshop](2026-10-14-six-month-planning-workshop/) | — | Worksheets A–E (fixed PDFs) + notes | 🟢 submitted |
 | 10 | 2026-10-20 | Tue | [Data-Driven Sprinting — Week 1](2026-10-20-data-driven-sprinting/) | Faizan Lagari | Weekly Card (20–24 Oct) | 🟢 submitted |
+| 11 | 2026-10-23 | Fri | [Problem Validation & Market Research](2026-10-23-problem-validation-market-research/) | Sana Shaharyar | Problem Drilling Framework + Customer Evidence + Payment Policy | 🟢 submitted |
 
 > ⚠️ **Dates & topics above are a best-guess scaffold.** Sessions run Mon / Wed / Fri from
 > 25 Sep 2026, so session **09** falls on Wed 14 Oct — that placement is **inferred** and
@@ -42,4 +43,4 @@ cp -r assignments/_template assignments/YYYY-MM-DD-topic
 ```
 
 ---
-*Last updated: 2026-10-21*
+*Last updated: 2026-10-25*

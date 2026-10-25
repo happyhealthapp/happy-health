@@ -48,6 +48,7 @@ const BMC_BASE = `${import.meta.env.BASE_URL}assignments/2026-09-25-business-mod
 const FINANCE_BASE = `${import.meta.env.BASE_URL}assignments/2026-09-28-accounts-and-finance`;
 const WORKSHOP_BASE = `${import.meta.env.BASE_URL}assignments/2026-10-14-six-month-planning-workshop`;
 const SPRINT_BASE = `${import.meta.env.BASE_URL}assignments/data-driven-sprinting`;
+const MARKET_BASE = `${import.meta.env.BASE_URL}assignments/2026-10-23-problem-validation-market-research`;
 
 /** Deliverables from the Business Model Canvas session (session 01). */
 export const BMC_WORKSHEETS: WorksheetRef[] = [
@@ -101,6 +102,22 @@ export const SPRINT_WORKSHEETS: WorksheetRef[] = [
   },
 ];
 
+/** Deliverables from the Problem Validation & Market Research session (session 11). */
+export const MARKET_WORKSHEETS: WorksheetRef[] = [
+  {
+    label: "Problem Drilling Framework",
+    url: `${MARKET_BASE}/problem-drilling-framework.pdf`,
+  },
+  {
+    label: "Customer Evidence & Validation",
+    url: `${MARKET_BASE}/customer-evidence-validation.pdf`,
+  },
+  {
+    label: "Payment Policy (v1.1)",
+    url: `${MARKET_BASE}/payment-policy.pdf`,
+  },
+];
+
 /** Confirmed sessions (any order — rendered sorted by date). */
 export const sessions: Session[] = [
   {
@@ -137,6 +154,15 @@ export const sessions: Session[] = [
     mentor: "Faizan Lagari",
     folder: "2026-10-20-data-driven-sprinting",
     worksheets: SPRINT_WORKSHEETS,
+    status: "done",
+  },
+  {
+    n: 11,
+    date: "2026-10-23",
+    topic: "Problem Validation & Market Research",
+    mentor: "Sana Shaharyar",
+    folder: "2026-10-23-problem-validation-market-research",
+    worksheets: MARKET_WORKSHEETS,
     status: "done",
   },
 ];

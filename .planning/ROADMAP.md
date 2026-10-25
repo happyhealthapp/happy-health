@@ -12,7 +12,7 @@ Happy Health ships in five phases that first put mentor-reviewable value on GitH
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Assignments & Deploy Pipeline** - Dated SEIC session folders mentors can browse; site auto-deploys on push
+- [x] **Phase 1: Assignments & Deploy Pipeline** - Dated SEIC session folders mentors can browse; site auto-deploys on push (completed 2026-10-25)
 - [ ] **Phase 2: Accounts & Roles** - Patient and staff sign-up, persistent sessions, database-enforced roles
 - [ ] **Phase 3: Service & Equipment Catalog + Support** - Browsable catalog with indicative pricing and human support channels
 - [ ] **Phase 4: Staff Onboarding & Verification** - Staff apply with credentials; profiles go live only after admin verification
@@ -94,7 +94,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Assignments & Deploy Pipeline | TBD | Not started | - |
+| 1. Assignments & Deploy Pipeline | — | Complete | 2026-10-25 |
 | 2. Accounts & Roles | TBD | Not started | - |
 | 3. Service & Equipment Catalog + Support | TBD | Not started | - |
 | 4. Staff Onboarding & Verification | TBD | Not started | - |

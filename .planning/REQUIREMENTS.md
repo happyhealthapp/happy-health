@@ -15,8 +15,8 @@ Requirements for the first milestone. Two linked workstreams: **(A)** the mentor
 
 ### Assignments (SEIC program)
 
-- [ ] **ASG-01**: SEIC session assignments are organized in a dated Mon/Wed/Fri folder structure under `assignments/` that mentors can browse
-- [ ] **ASG-02**: Repository README gives mentors one entry point linking each session's notes, assignment, and resources, in date order
+- [x] **ASG-01**: SEIC session assignments are organized in a dated Mon/Wed/Fri folder structure under `assignments/` that mentors can browse
+- [x] **ASG-02**: Repository README gives mentors one entry point linking each session's notes, assignment, and resources, in date order
 
 ### Authentication & Accounts
 
@@ -68,7 +68,7 @@ Requirements for the first milestone. Two linked workstreams: **(A)** the mentor
 
 ### Deployment
 
-- [ ] **DEPL-01**: The site deploys automatically to GitHub Pages on push to `main`
+- [x] **DEPL-01**: The site deploys automatically to GitHub Pages on push to `main`
 
 ---
 
@@ -184,9 +184,9 @@ Which phases cover which requirements. Populated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ASG-01 | Phase 1 | Pending |
-| ASG-02 | Phase 1 | Pending |
-| DEPL-01 | Phase 1 | Pending |
+| ASG-01 | Phase 1 | Complete |
+| ASG-02 | Phase 1 | Complete |
+| DEPL-01 | Phase 1 | Complete |
 | AUTH-01 | Phase 2 | Pending |
 | AUTH-02 | Phase 2 | Pending |
 | AUTH-03 | Phase 2 | Pending |
@@ -210,6 +210,7 @@ Which phases cover which requirements. Populated during roadmap creation.
 | NOTF-01 | Phase 5 | Pending |
 
 **Coverage:**
+
 - v1 requirements: 24 total
 - Mapped to phases: 24 ✓
 - Unmapped: 0

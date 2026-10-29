@@ -210,6 +210,26 @@ section[id] {
   color: var(--muted);
 }
 
+.hero-side {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-photo {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .hero-card {
   padding: clamp(1.4rem, 3vw, 2rem);
   border: 1px solid var(--border);

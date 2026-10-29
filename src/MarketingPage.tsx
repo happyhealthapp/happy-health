@@ -176,24 +176,37 @@ export default function MarketingPage() {
             </div>
           </div>
 
-          <aside className="hero-card" aria-labelledby="screening-title">
-            <p className="hero-card-eyebrow">Our screening standard</p>
-            <h2 id="screening-title">Before a nurse&rsquo;s first shift</h2>
-            <ul className="check-list">
-              {checks.map((check) => (
-                <li key={check}>
-                  <span className="check-icon">
-                    <CheckIcon />
-                  </span>
-                  {check}
-                </li>
-              ))}
-            </ul>
-            <p className="hero-card-note">
-              You are letting someone into your parents&rsquo; home, so who they
-              are matters as much as what they can do.
-            </p>
-          </aside>
+          <div className="hero-side">
+            <figure className="hero-photo">
+              {/* Pexels photo 7551675 — free to use, no attribution required. */}
+              <img
+                src={`${BASE}care-home.webp`}
+                alt="A caregiver adjusting an older man's pillow in a bright bedroom at home"
+                width={1200}
+                height={900}
+                fetchPriority="high"
+              />
+            </figure>
+
+            <aside className="hero-card" aria-labelledby="screening-title">
+              <p className="hero-card-eyebrow">Our screening standard</p>
+              <h2 id="screening-title">Before a nurse&rsquo;s first shift</h2>
+              <ul className="check-list">
+                {checks.map((check) => (
+                  <li key={check}>
+                    <span className="check-icon">
+                      <CheckIcon />
+                    </span>
+                    {check}
+                  </li>
+                ))}
+              </ul>
+              <p className="hero-card-note">
+                You are letting someone into your parents&rsquo; home, so who
+                they are matters as much as what they can do.
+              </p>
+            </aside>
+          </div>
         </section>
 
         <div className="trust-bar">

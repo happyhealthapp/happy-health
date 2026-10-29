@@ -1,0 +1,1 @@
+import{c as r,j as t,r as e}from"./index-ChS9hkGk.js";import{M as n}from"./MarketingPage-B2AZkIBa.js";const o=document.getElementById("root");if(!o)throw new Error("Root container #root was not found in index.html");r.createRoot(o).render(t.jsx(e.StrictMode,{children:t.jsx(n,{})}));

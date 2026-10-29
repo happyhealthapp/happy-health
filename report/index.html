@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Health — Program Report · SEIC Cohort 2</title>
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="Print-ready progress report for Happy Health, a SEIC Cohort 2 founder-program venture: program snapshot, sessions, assignments, and pitch."
+    />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <style>
+      /* Light, print-first palette — mirrors src/index.css tokens. */
+      :root {
+        --bg: #ffffff;
+        --surface: #f7f9fc;
+        --text: #0f172a;
+        --muted: #5b6b82;
+        --border: #e4e9f0;
+        --brand: #0f766e;
+        --brand-strong: #115e59;
+        --accent-soft: #e6f4f1;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      main {
+        max-width: 170mm;
+        margin: 0 auto;
+        padding: 10mm 6mm 14mm;
+      }
+
+      a {
+        color: var(--brand);
+      }
+
+      /* ---------- Cover block ---------- */
+
+      .masthead {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--brand);
+      }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        background: var(--brand);
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 1.3rem;
+        line-height: 1;
+        flex: none;
+      }
+
+      .brand-name {
+        font-weight: 700;
+        font-size: 1.25rem;
+        letter-spacing: -0.01em;
+      }
+
+      .brand-sub {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .doc-title {
+        margin: 10mm 0 2mm;
+        font-size: 1.9rem;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      .doc-meta {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin: 0 0 6mm;
+      }
+
+      .identity {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 28px;
+        margin: 0 0 8mm;
+        padding: 10px 14px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        font-size: 0.92rem;
+      }
+
+      .identity b {
+        display: block;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .lede {
+        font-size: 1.05rem;
+        margin: 0 0 4mm;
+      }
+
+      .vision {
+        margin: 0 0 8mm;
+        padding: 12px 16px;
+        background: var(--accent-soft);
+        border-left: 4px solid var(--brand);
+        border-radius: 0 10px 10px 0;
+      }
+
+      .vision p {
+        margin: 0;
+      }
+
+      .vision .label {
+        color: var(--brand-strong);
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 4px;
+      }
+
+      /* ---------- Sections ---------- */
+
+      h2 {
+        margin: 8mm 0 3mm;
+        padding-bottom: 4px;
+        border-bottom: 1px solid var(--border);
+        font-size: 1.15rem;
+        letter-spacing: -0.01em;
+      }
+
+      h2 .n {
+        color: var(--brand);
+        margin-right: 6px;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 0 0 2mm;
+      }
+
+      .service {
+        padding: 10px 12px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+      }
+
+      .service h3 {
+        margin: 0 0 4px;
+        font-size: 0.95rem;
+      }
+
+      .service p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 0 2mm;
+      }
+
+      .stat {
+        flex: 1 1 34mm;
+        padding: 10px 14px;
+        background: var(--brand);
+        color: #ffffff;
+        border-radius: 12px;
+      }
+
+      .stat b {
+        display: block;
+        font-size: 1.45rem;
+        line-height: 1.1;
+      }
+
+      .stat span {
+        font-size: 0.8rem;
+        opacity: 0.9;
+      }
+
+      /* ---------- Tables ---------- */
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 0 3mm;
+        font-size: 0.92rem;
+      }
+
+      th {
+        text-align: left;
+        color: var(--muted);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        padding: 6px 10px;
+        border-bottom: 2px solid var(--border);
+      }
+
+      td {
+        padding: 8px 10px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+
+      .date-cell {
+        white-space: nowrap;
+        color: var(--muted);
+      }
+
+      .chip {
+        display: inline-block;
+        min-width: 34px;
+        text-align: center;
+        padding: 1px 7px;
+        margin-right: 6px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--brand-strong);
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .doc-links a {
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 0.85rem;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .pending {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      ul.docs {
+        margin: 0 0 3mm;
+        padding-left: 18px;
+      }
+
+      ul.docs li {
+        margin-bottom: 4px;
+      }
+
+      /* ---------- Footer block inside content (last page) ---------- */
+
+      .contact {
+        margin-top: 8mm;
+        padding: 12px 16px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        font-size: 0.92rem;
+      }
+
+      .contact p {
+        margin: 0 0 4px;
+      }
+
+      /* On-screen only affordance. */
+      .screen-only {
+        margin: 6mm 0 0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 10px;
+        background: var(--brand);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+      }
+
+      .btn:hover {
+        background: var(--brand-strong);
+      }
+
+      /* ---------- Print ---------- */
+
+      @page {
+        size: A4;
+        margin: 14mm;
+      }
+
+      @media print {
+        body {
+          font-size: 10pt;
+        }
+
+        main {
+          max-width: none;
+          padding: 0;
+        }
+
+        .screen-only {
+          display: none;
+        }
+
+        a {
+          color: var(--text);
+          text-decoration: none;
+        }
+
+        .doc-links a::after {
+          content: " (" attr(href) ")";
+          font-size: 0.75em;
+          color: var(--muted);
+          word-break: break-all;
+        }
+
+        h2,
+        .service,
+        .stat,
+        table {
+          break-inside: avoid;
+        }
+
+        h2 {
+          break-after: avoid;
+        }
+      }
+
+      @media screen {
+        body {
+          background: #eef2f7;
+        }
+
+        main {
+          margin: 18px auto;
+          padding: 14mm 12mm 18mm;
+          background: var(--bg);
+          border-radius: 14px;
+          box-shadow:
+            0 1px 2px rgba(15, 23, 42, 0.06),
+            0 10px 30px rgba(15, 23, 42, 0.07);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="top">
+      <header>
+        <div class="masthead">
+          <span class="brand-mark" aria-hidden="true">+</span>
+          <div>
+            <div class="brand-name">Happy Health</div>
+            <div class="brand-sub">Home care in Pakistan</div>
+          </div>
+        </div>
+
+        <h1 class="doc-title">Program Report</h1>
+        <p class="doc-meta">
+          SEIC Cohort 2 · Sindh Enterprise Incubation Center · progress as of
+          21 October 2026
+        </p>
+
+        <dl class="identity">
+          <div>
+            <b>Founder</b>
+            Theo
+          </div>
+          <div>
+            <b>Program</b>
+            SEIC — sessions Mon · Wed · Fri since 25 Sep 2026
+          </div>
+          <div>
+            <b>Contact</b>
+            <a href="mailto:happy_health_startup_theo@tutamail.com"
+              >happy_health_startup_theo@tutamail.com</a
+            >
+          </div>
+        </dl>
+
+        <p class="lede">
+          Trusted medical care, delivered to your door. Happy Health connects
+          patients and families to verified nurses, doctors, and medical
+          equipment — on demand, at home.
+        </p>
+
+        <div class="vision">
+          <div class="label">Our vision</div>
+          <p>
+            Karachi's home-care agencies are expensive and piecemeal. Happy
+            Health puts it all on one doorstep — licensed nurses, doctor home
+            visits, and equipment like electric beds — so patients get quality
+            care, families get peace of mind, and nurses keep more of what they
+            earn.
+          </p>
+        </div>
+      </header>
+
+      <section aria-labelledby="services-title">
+        <h2 id="services-title"><span class="n">1</span>What we offer</h2>
+        <div class="services">
+          <article class="service">
+            <h3>Home Nursing</h3>
+            <p>
+              Qualified nurses deliver wound care, injections, vitals
+              monitoring, and post-operative support in the comfort of home.
+            </p>
+          </article>
+          <article class="service">
+            <h3>Doctor Home Visits</h3>
+            <p>
+              Book a verified doctor to visit your home for consultation,
+              diagnosis, and prescriptions — no clinic queue needed.
+            </p>
+          </article>
+          <article class="service">
+            <h3>Medical Equipment Rental</h3>
+            <p>
+              Rent wheelchairs, hospital beds, oxygen concentrators, and more —
+              with delivery and pickup arranged for you.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="program-title">
+        <h2 id="program-title"><span class="n">2</span>Program snapshot</h2>
+        <p class="muted" style="margin-top: 0">
+          The six-month SEIC founder program runs Mon / Wed / Fri, each session
+          led by a different guest mentor. Every session's materials are
+          published to the mentor hub and the public GitHub repository.
+        </p>
+        <div class="stats">
+          <div class="stat"><b>4</b><span>sessions with materials published</span></div>
+          <div class="stat"><b>9</b><span>worksheets, cards &amp; models online</span></div>
+          <div class="stat"><b>7</b><span>slides in the five-minute pitch</span></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="sessions-title">
+        <h2 id="sessions-title"><span class="n">3</span>Sessions &amp; assignments</h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Mentor</th>
+              <th scope="col">Assignment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="date-cell"><span class="chip">Fri</span>25 Sep 2026</td>
+              <td>Faizan Lagari</td>
+              <td>
+                Business Model Canvas
+                <div class="doc-links">
+                  <a href="../assignments/2026-09-25-business-model-canvas/business-model-canvas-landscape-pkr.pdf"
+                    >Business Model Canvas — landscape (PKR)</a
+                  >
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-cell"><span class="chip">Mon</span>28 Sep 2026</td>
+              <td>Dr. Mohsin Ali</td>
+              <td>
+                Accounts &amp; Finance
+                <div class="doc-links">
+                  <a href="../assignments/2026-09-28-accounts-and-finance/financial-model-combined-clean.pdf"
+                    >Financial Model — combined (PDF)</a
+                  >
+                  <a href="../assignments/2026-09-28-accounts-and-finance/financial-model-clean.xlsx"
+                    >Financial Model — clean (XLSX)</a
+                  >
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-cell"><span class="chip">Wed</span>14 Oct 2026</td>
+              <td>—</td>
+              <td>
+                Six-Month Planning Workshop
+                <div class="doc-links">
+                  <a href="../assignments/2026-10-14-six-month-planning-workshop/worksheet-a-vision-to-goals-canvas-fixed.pdf"
+                    >Worksheet A</a
+                  >
+                  <a href="../assignments/2026-10-14-six-month-planning-workshop/worksheet-b-goal-prioritiser-fixed.pdf"
+                    >Worksheet B</a
+                  >
+                  <a href="../assignments/2026-10-14-six-month-planning-workshop/worksheet-c-kpi-tree-fixed.pdf"
+                    >Worksheet C</a
+                  >
+                  <a href="../assignments/2026-10-14-six-month-planning-workshop/worksheet-d-six-month-plan-on-a-page-fixed.pdf"
+                    >Worksheet D</a
+                  >
+                  <a href="../assignments/2026-10-14-six-month-planning-workshop/worksheet-e-accountability-sheet-fixed.pdf"
+                    >Worksheet E</a
+                  >
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-cell"><span class="chip">Tue</span>20 Oct 2026</td>
+              <td>Faizan Lagari</td>
+              <td>
+                Data-Driven Sprinting
+                <div class="doc-links">
+                  <a href="../assignments/data-driven-sprinting/weekly-card-week-1.pdf"
+                    >Weekly Card — Week 1 (20–24 Oct)</a
+                  >
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-cell"><span class="chip">PDF</span>Any time</td>
+              <td>Theo</td>
+              <td>
+                Five-minute pitch deck (7 slides)
+                <div class="doc-links">
+                  <a href="../assignments/happy-health-pitch.pdf">View pitch</a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section aria-labelledby="workshop-title">
+        <h2 id="workshop-title">
+          <span class="n">4</span>Focus — Six-Month Planning Workshop (14 Oct)
+        </h2>
+        <p style="margin-top: 0">
+          The workshop turned the venture vision into an executable six-month
+          plan. The founder's completed worksheets are published in full:
+        </p>
+        <ul class="docs">
+          <li>
+            <strong>Worksheet A — Vision-to-Goals Canvas:</strong> connects the
+            long-term vision to concrete program goals.
+          </li>
+          <li>
+            <strong>Worksheet B — Goal Prioritiser:</strong> ranks those goals
+            so the next six months spend effort where it counts.
+          </li>
+          <li>
+            <strong>Worksheet C — KPI Tree:</strong> breaks each goal into
+            measurable indicators of progress.
+          </li>
+          <li>
+            <strong>Worksheet D — Six-Month Plan on a Page:</strong> the whole
+            plan — goals, milestones, and measures — on a single page.
+          </li>
+          <li>
+            <strong>Worksheet E — Accountability Sheet:</strong> owners and
+            check-ins that keep the plan on track.
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="sprint-title">
+        <h2 id="sprint-title">
+          <span class="n">5</span>Focus — Data-Driven Sprinting (from 20 Oct)
+        </h2>
+        <p style="margin-top: 0">
+          The current program block runs weekly sprints against the KPI tree.
+          Each week ships a printed card defining the sprint's focus; Week 1
+          (20–24 Oct 2026) is linked in the table above and published in the
+          repository alongside the workshop materials.
+        </p>
+      </section>
+
+      <section class="contact" aria-labelledby="links-title">
+        <h2 id="links-title" style="margin-top: 0; border: none; padding: 0">
+          Where to find everything
+        </h2>
+        <p>
+          <strong>Mentor hub</strong> (this report's source of truth):
+          <a href="https://happyhealthapp.github.io/happy-health/"
+            >happyhealthapp.github.io/happy-health</a
+          >
+        </p>
+        <p>
+          <strong>Assignments on GitHub:</strong>
+          <a
+            href="https://github.com/happyhealthapp/happy-health/tree/main/assignments"
+            >github.com/happyhealthapp/happy-health/tree/main/assignments</a
+          >
+        </p>
+        <p>
+          <strong>Public site:</strong>
+          <a href="https://happyhealthapp.github.io/happy-health/home/"
+            >happyhealthapp.github.io/happy-health/home</a
+          >
+        </p>
+        <p>
+          Report generated 21 October 2026 from the mentor-hub data. Page
+          numbers are in the footer of the PDF version.
+        </p>
+      </section>
+
+      <p class="screen-only">
+        <a class="btn" href="./master-report.pdf">Download the PDF version</a>
+      </p>
+    </main>
+  </body>
+</html>

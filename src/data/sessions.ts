@@ -38,7 +38,7 @@ export const PROGRAM = "SEIC";
 export const CADENCE = "Mon · Wed · Fri";
 
 export const VISION =
-  "Karachi's home-care agencies are expensive and piecemeal. Happy Health puts it all on one doorstep — licensed nurses, doctor home visits, and equipment like electric beds — so patients get quality care, families get peace of mind, and nurses keep more of what they earn.";
+  "Karachi's home-care agencies are expensive and piecemeal. Happy Health puts it all on one doorstep — nurses, doctor home visits, and equipment like electric beds — so patients get quality care, families get peace of mind, and nurses keep more of what they earn.";
 
 export const REPO_URL = "https://github.com/happyhealthapp/happy-health";
 export const ASSIGNMENTS_URL = `${REPO_URL}/tree/main/assignments`;

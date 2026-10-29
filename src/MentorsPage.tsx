@@ -14,7 +14,7 @@ import {
 } from "./data/sessions";
 
 const BASE = import.meta.env.BASE_URL;
-const HOME_URL = `${BASE}home/`;
+const HOME_URL = BASE;
 
 function Icon() {
   return (
@@ -135,6 +135,10 @@ export default function MentorsPage() {
 
   return (
     <>
+      <a className="skip-link" href="#top">
+        Skip to content
+      </a>
+
       <header className="site-header">
         <a className="brand" href={BASE}>
           <span className="brand-mark" aria-hidden="true">
@@ -143,7 +147,7 @@ export default function MentorsPage() {
           <span className="brand-name">{STARTUP}</span>
         </a>
         <nav className="site-nav" aria-label="Primary">
-          <a href={HOME_URL}>Happy Health website</a>
+          <a href={HOME_URL}>Back to main site</a>
           <a href={PITCH_URL} target="_blank" rel="noopener noreferrer">
             Pitch (PDF)
           </a>
@@ -152,7 +156,7 @@ export default function MentorsPage() {
 
       <main id="top">
         <section className="mentor-hero" aria-labelledby="hero-title">
-          <h1 id="hero-title">{STARTUP}</h1>
+          <h1 id="hero-title">Mentor hub</h1>
           <p className="vision-statement mentor-vision">{VISION}</p>
           <dl className="identity">
             <div className="identity-item">
@@ -177,7 +181,12 @@ export default function MentorsPage() {
           {sorted.length === 0 ? (
             <p className="empty">No assignments yet.</p>
           ) : (
-            <div className="table-wrap">
+            <div
+              className="table-wrap"
+              role="region"
+              aria-label="Assignments"
+              tabIndex={0}
+            >
               <table className="assignment-table">
                 <thead>
                   <tr>

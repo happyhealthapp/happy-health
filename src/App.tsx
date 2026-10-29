@@ -1,5 +1,5 @@
-import MentorsPage from "./MentorsPage";
+import MarketingPage from "./MarketingPage";
 
 export default function App() {
-  return <MentorsPage />;
+  return <MarketingPage />;
 }

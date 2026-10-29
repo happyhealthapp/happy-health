@@ -1,16 +1,9 @@
 import type { ReactNode } from "react";
-import {
-  ASSIGNMENTS_URL,
-  FOUNDER,
-  FOUNDER_EMAIL,
-  PITCH_URL,
-  PROGRAM,
-  STARTUP,
-  VISION,
-} from "./data/sessions";
+import { FOUNDER_EMAIL, STARTUP } from "./data/sessions";
 
 const BASE = import.meta.env.BASE_URL;
-const MENTORS_URL = BASE;
+const MENTORS_URL = `${BASE}mentors/`;
+const EMAIL_HREF = `mailto:${FOUNDER_EMAIL}?subject=Home%20care%20request`;
 
 type Service = {
   title: string;
@@ -20,9 +13,9 @@ type Service = {
 
 const services: Service[] = [
   {
-    title: "Home Nursing",
+    title: "Home nursing",
     description:
-      "Qualified nurses deliver wound care, injections, vitals monitoring, and post-operative support in the comfort of home.",
+      "Nurses come to your home for wound care, injections, vitals checks, and help after surgery or a hospital stay. We discuss the need with you before anything is arranged.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -39,9 +32,9 @@ const services: Service[] = [
     ),
   },
   {
-    title: "Doctor Home Visits",
+    title: "Doctor home visits",
     description:
-      "Book a verified doctor to visit your home for consultation, diagnosis, and prescriptions — no clinic queue needed.",
+      "A doctor visits your home for a consultation, a review of medicines, or a follow-up. We agree what the visit covers before it happens.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -59,9 +52,9 @@ const services: Service[] = [
     ),
   },
   {
-    title: "Medical Equipment Rental",
+    title: "Medical equipment rental",
     description:
-      "Rent wheelchairs, hospital beds, oxygen concentrators, and more — with delivery and pickup arranged for you.",
+      "Wheelchairs, hospital beds, and oxygen concentrators on rent, with delivery arranged. We check what the equipment is for and explain the terms before you commit.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -80,9 +73,70 @@ const services: Service[] = [
   },
 ];
 
+const checks = [
+  "A current PNMC nursing licence",
+  "CNIC and identity confirmation",
+  "Police verification on record",
+  "A reference from a hospital",
+];
+
+const steps = [
+  {
+    title: "Tell us the need",
+    body: "Email us what is happening at home: the care needed, who it is for, and where you are in Karachi.",
+  },
+  {
+    title: "Agree the plan",
+    body: "We set out what will be provided, who will provide it, and the cost in writing. You approve before care begins.",
+  },
+  {
+    title: "Care starts",
+    body: "Once the plan is agreed, we coordinate the first visit and stay your single point of contact while care continues.",
+  },
+];
+
+const faqs = [
+  {
+    q: "Which areas do you cover?",
+    a: "Karachi. Tell us your area when you write and we will confirm whether we can reach you before you commit to anything.",
+  },
+  {
+    q: "How soon can care start?",
+    a: "It depends on the care needed and on the nurse being screened and available. We will give you a realistic start date in writing, not an estimate we cannot keep.",
+  },
+  {
+    q: "What checks do your nurses undergo?",
+    a: "Before a first shift we require a current PNMC licence, CNIC identity check, police verification, and a hospital reference. The same standard applies to every nurse we engage.",
+  },
+  {
+    q: "Can I request equipment only?",
+    a: "Yes. Equipment rental does not require nursing care. Tell us what is needed and we will quote it separately in writing.",
+  },
+];
+
+function CheckIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2.4}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m5 12.5 4.2 4.2L19 7" />
+    </svg>
+  );
+}
+
 export default function MarketingPage() {
   return (
     <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+
       <header className="site-header">
         <a className="brand" href="#top">
           <span className="brand-mark" aria-hidden="true">
@@ -92,55 +146,71 @@ export default function MarketingPage() {
         </a>
         <nav className="site-nav" aria-label="Primary">
           <a href="#services">Services</a>
-          <a href="#pitch">Pitch</a>
-          <a href={MENTORS_URL}>For mentors</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#contact">Contact</a>
+          <a className="nav-cta" href={EMAIL_HREF}>
+            Email us
+          </a>
         </nav>
       </header>
 
-      <main id="top">
-        <section className="hero" aria-labelledby="hero-title">
-          <p className="eyebrow">Home care in Pakistan</p>
-          <h1 id="hero-title">
-            Trusted medical care, <span>delivered to your door</span>.
-          </h1>
-          <p className="lede">
-            {STARTUP} connects patients and families to verified nurses,
-            doctors, and medical equipment — on demand, at home. A {PROGRAM}{" "}
-            founder-program venture founded by {FOUNDER}.
-          </p>
-          <div className="hero-actions">
-            <a
-              className="btn btn-primary"
-              href={PITCH_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View our 5-minute pitch (PDF)
-            </a>
-            <a className="btn btn-ghost" href={MENTORS_URL}>
-              For mentors — view assignments
-            </a>
-            <a className="btn btn-ghost" href="#services">
-              Explore services
-            </a>
+      <main id="main">
+        <section className="hero" id="top" aria-labelledby="hero-title">
+          <div className="hero-copy">
+            <p className="eyebrow">Home care in Karachi</p>
+            <h1 id="hero-title">
+              Home nursing and doctor visits for your parents
+            </h1>
+            <p className="lede">
+              We arrange nurses, doctor visits, and medical equipment in
+              Karachi, with one person accountable for your family&rsquo;s care
+              from the first call.
+            </p>
+            <div className="hero-actions">
+              <a className="btn btn-primary" href={EMAIL_HREF}>
+                Email us about care
+              </a>
+              <a className="btn btn-ghost" href="#how-it-works">
+                See how it works
+              </a>
+            </div>
           </div>
+
+          <aside className="hero-card" aria-labelledby="screening-title">
+            <p className="hero-card-eyebrow">Our screening standard</p>
+            <h2 id="screening-title">Before a nurse&rsquo;s first shift</h2>
+            <ul className="check-list">
+              {checks.map((check) => (
+                <li key={check}>
+                  <span className="check-icon">
+                    <CheckIcon />
+                  </span>
+                  {check}
+                </li>
+              ))}
+            </ul>
+            <p className="hero-card-note">
+              You are letting someone into your parents&rsquo; home, so who they
+              are matters as much as what they can do.
+            </p>
+          </aside>
         </section>
 
-        <section className="vision" aria-labelledby="vision-title">
-          <div className="vision-inner">
-            <h2 className="vision-label" id="vision-title">
-              Our vision
-            </h2>
-            <p className="vision-statement">{VISION}</p>
-          </div>
-        </section>
+        <div className="trust-bar">
+          <ul aria-label="What you can expect">
+            <li>One point of contact</li>
+            <li>Karachi</li>
+            <li>Clear pricing before care</li>
+          </ul>
+        </div>
 
         <section
           id="services"
           className="services"
           aria-labelledby="services-title"
         >
-          <h2 id="services-title">What we offer</h2>
+          <p className="section-eyebrow">Services</p>
+          <h2 id="services-title">What we arrange</h2>
           <div className="cards">
             {services.map((service) => (
               <article className="card" key={service.title}>
@@ -152,45 +222,70 @@ export default function MarketingPage() {
           </div>
         </section>
 
-        <section id="pitch" className="pitch" aria-labelledby="pitch-title">
-          <h2 id="pitch-title">The five-minute pitch</h2>
-          <p>
-            The whole business on seven slides — the problem, the people, how it
-            works, and where it is going. Open it in your browser, or download
-            the PDF to keep and share.
-          </p>
-          <div className="hero-actions">
-            <a
-              className="btn btn-primary"
-              href={PITCH_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open the pitch (PDF)
-            </a>
-            <a className="btn btn-ghost" href={PITCH_URL} download>
-              Download the pitch (PDF)
-            </a>
-          </div>
+        <section
+          id="how-it-works"
+          className="how"
+          aria-labelledby="how-title"
+        >
+          <p className="section-eyebrow">How it works</p>
+          <h2 id="how-title">From first email to first visit</h2>
+          <ol className="steps">
+            {steps.map((step, index) => (
+              <li key={step.title}>
+                <span className="step-num" aria-hidden="true">
+                  {index + 1}
+                </span>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </li>
+            ))}
+          </ol>
         </section>
 
         <section
-          id="mentors"
-          className="mentors"
-          aria-labelledby="mentors-title"
+          id="pricing"
+          className="pricing"
+          aria-labelledby="pricing-title"
         >
-          <h2 id="mentors-title">For mentors &amp; reviewers</h2>
+          <div>
+            <p className="section-eyebrow">Pricing</p>
+            <h2 id="pricing-title">How pricing works</h2>
+            <p>
+              Every request is quoted individually, because nursing, doctor
+              visits, and equipment are priced differently. You receive the
+              quote in writing, and nothing starts until you agree to it.
+            </p>
+          </div>
+          <a className="btn btn-primary" href={EMAIL_HREF}>
+            Ask for a quote
+          </a>
+        </section>
+
+        <section id="faq" className="faq" aria-labelledby="faq-title">
+          <p className="section-eyebrow">FAQ</p>
+          <h2 id="faq-title">Questions families ask</h2>
+          <div className="faq-list">
+            {faqs.map((faq) => (
+              <details key={faq.q}>
+                <summary>{faq.q}</summary>
+                <p>{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="contact" aria-labelledby="contact-title">
+          <p className="section-eyebrow">Contact</p>
+          <h2 id="contact-title">Talk to us about care</h2>
           <p>
-            Sessions run every Mon / Wed / Fri, each led by a different guest
-            mentor. Open the mentor hub to follow the session calendar and the
-            matching assignments, or browse everything directly on GitHub.
+            Email{" "}
+            <a href={`mailto:${FOUNDER_EMAIL}`}>{FOUNDER_EMAIL}</a> with what is
+            happening at home and what you think you need. A person reads every
+            message, and we will tell you honestly whether we can help.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href={MENTORS_URL}>
-              Open the mentor hub
-            </a>
-            <a className="btn btn-ghost" href={ASSIGNMENTS_URL}>
-              Assignments on GitHub
+            <a className="btn btn-primary" href={EMAIL_HREF}>
+              Email us about care
             </a>
           </div>
         </section>
@@ -198,10 +293,11 @@ export default function MarketingPage() {
 
       <footer className="site-footer">
         <p>
-          <strong>{STARTUP}</strong> · founded by {FOUNDER} · built as part of
-          the <strong>{PROGRAM}</strong> (Sindh Enterprise Incubation Center)
-          founder program ·{" "}
+          <strong>{STARTUP}</strong> · home care in Karachi ·{" "}
           <a href={`mailto:${FOUNDER_EMAIL}`}>{FOUNDER_EMAIL}</a>
+        </p>
+        <p className="footer-links">
+          <a href={MENTORS_URL}>Mentor hub</a>
         </p>
         <p className="muted">
           © {new Date().getFullYear()} {STARTUP}
